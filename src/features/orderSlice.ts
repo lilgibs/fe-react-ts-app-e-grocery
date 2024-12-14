@@ -23,8 +23,8 @@ export const orderSlice = createSlice({
 export const { setOrderItems, resetOrder } = orderSlice.actions;
 export default orderSlice.reducer;
 
-export function fetchOrder(user) {
-  return async (dispatch) => {
+export function fetchOrder(user: any) {
+  return async (dispatch: any) => {
     try {
       const response = await Axios.get(`${process.env.REACT_APP_API_BASE_URL}/order/?userId=${user}`);
       let orderItems = response.data.orders;
@@ -36,8 +36,8 @@ export function fetchOrder(user) {
   };
 }
 
-export function fetchStoreOrder(store) {
-  return async (dispatch) => {
+export function fetchStoreOrder(store: any) {
+  return async (dispatch: any) => {
     try {
       const response = await Axios.get(`${process.env.REACT_APP_API_BASE_URL}/admin/order/?storeId=${store}`);
       let orderItems = response.data.orders;
@@ -50,7 +50,7 @@ export function fetchStoreOrder(store) {
 }
 
 export function fetchAllOrder() {
-  return async (dispatch) => {
+  return async (dispatch: any) => {
     try {
       const response = await Axios.get(`${process.env.REACT_APP_API_BASE_URL}/admin/order/all`);
       let orderItems = response.data;

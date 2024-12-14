@@ -10,7 +10,7 @@ import orderReducer from "../features/orderSlice";
 import discountReducer from "../features/discountSlice";
 import voucherReducer from "../features/voucherSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     admin: adminReducer,
     location: locationReducer,
@@ -24,3 +24,7 @@ export default configureStore({
     voucher: voucherReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>
+
+export default store

@@ -5,11 +5,11 @@ export const adminSlice = createSlice({
   name: "users",
   initialState: {
     admin: {
-      admin_id: null,
-      name: null,
-      email: null,
-      role: null,
-      store_id: null,
+      admin_id: "",
+      name: "",
+      email: "",
+      role: "",
+      store_id: "",
       is_deleted: false,
     },
     isLoaded: false,
@@ -20,11 +20,11 @@ export const adminSlice = createSlice({
     },
     resetAdmin: (state) => {
       state.admin = {
-        admin_id: null,
-        name: null,
-        email: null,
-        role: null,
-        store_id: null,
+        admin_id: "",
+        name: "",
+        email: "",
+        role: "",
+        store_id: "",
         is_deleted: false,
       };
       localStorage.removeItem("admin_token");

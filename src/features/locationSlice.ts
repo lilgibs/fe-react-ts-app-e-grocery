@@ -9,7 +9,7 @@ export const locationSlice = createSlice({
       lat: 0,
       long: 0,
       city: "",
-      nearestStore: "",
+      nearestStore: { store_id: "", store_name: "" },
       kmToNearestStore: 0,
     },
     isLoaded: false,
@@ -29,7 +29,7 @@ export const locationSlice = createSlice({
         lat: 0,
         long: 0,
         city: "",
-        nearestStore: "",
+        nearestStore: { store_id: "", store_name: "" },
         kmToNearestStore: 0,
       };
     },

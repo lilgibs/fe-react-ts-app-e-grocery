@@ -5,7 +5,7 @@ export const addressSlice = createSlice({
   name: "addresses",
   initialState: {
     address: [],
-    mainAddress: null,
+    mainAddress: "",
     isLoaded: false,
   },
   reducers: {
@@ -13,7 +13,7 @@ export const addressSlice = createSlice({
       state.address = action.payload;
     },
     resetAddress: (state) => {
-      state.address = null;
+      state.address = [];
     },
     setMainAddress: (state, action) => {
       state.mainAddress = action.payload;

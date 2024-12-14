@@ -33,7 +33,7 @@ export function getVoucher(store_id, token) {
       if (response) {
         dispatch(setVoucher(response.data.data));
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.response.data);
     }
   };
