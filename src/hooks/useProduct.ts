@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import { ProductApiRepository } from "../api/product/product-api-repository";
 
-export default function useProduct(props: { storeId: string }) {
+export default function useProduct(props: {
+  storeId?: string,
+  search?: string,
+  category?: string,
+  page?: number,
+  limit?: number,
+  sortType?: string,
+  sortOrder?: string
+}) {
   const ApiRepo = new ProductApiRepository()
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true)
   const [isSuccess, setIsSuccess] = useState(false)
   const [isError, setIsError] = useState(false)

@@ -1,8 +1,24 @@
-import React from 'react'
 import { Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react";
 import { Box, RadioGroup, Radio, Text, Divider, Stack } from "@chakra-ui/react";
 
-function ProductFilterDrawer({ isOpen, onClose, handleSortChange, sortType, sortOrder, categories, selectedCategory, handleSetCategory }) {
+function ProductFilterDrawer({
+  isOpen,
+  onClose,
+  handleSortChange,
+  sortType, sortOrder,
+  categories,
+  selectedCategory,
+  handleSetCategory
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  handleSortChange: (value: string) => void;
+  sortType: string;
+  sortOrder: string;
+  categories: { value: string; label: string; image: string }[];
+  selectedCategory: string;
+  handleSetCategory: (category: string) => void;
+}) {
   return (
     <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
       <DrawerOverlay />
@@ -10,7 +26,10 @@ function ProductFilterDrawer({ isOpen, onClose, handleSortChange, sortType, sort
         <DrawerCloseButton />
         <DrawerHeader className="bg-green-500 text-white">Filter</DrawerHeader>
         <DrawerBody>
-          <RadioGroup onChange={handleSortChange} value={sortType && sortOrder ? `${sortType}_${sortOrder}` : ""}>
+          <RadioGroup
+            onChange={handleSortChange}
+            value={sortType && sortOrder ? `${sortType}_${sortOrder}` : ""}
+          >
             <Text className="font-semibold text-lg">Sort by</Text>
             <Divider mb={"2"} />
             <Stack direction="column">

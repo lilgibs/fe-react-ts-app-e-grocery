@@ -9,7 +9,7 @@ export class ProductApiRepository {
     limit?: number,
     sortType?: string,
     sortOrder?: string
-  }): Promise<any[]> {
+  }): Promise<any> {
     try {
       const { storeId, search, category, page, limit, sortType, sortOrder } = props
 

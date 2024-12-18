@@ -1,4 +1,4 @@
-export function formatRupiah(input) {
+export function formatRupiah(input: number) {
   const number = Number(input);
   return number.toLocaleString('id-ID', {
     style: 'currency',
